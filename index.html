@@ -47,6 +47,9 @@ figure{margin:1rem 0}
 figure img{display:block;max-width:100%;height:auto;border-radius:.55rem}
 figcaption{margin-top:.4rem;color:var(--muted)}
 table{border-collapse:collapse;width:min(100%,32rem)}
+.platform-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20rem);gap:1rem;align-items:start}
+.platform-layout figure{margin:0}
+@media(max-width:1050px){.platform-layout{grid-template-columns:1fr}.platform-layout figure{max-width:20rem}}
 th,td{padding:.45rem .7rem;text-align:left;border-bottom:1px solid var(--line)}
 thead{background:#eef5eb}
 footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
@@ -92,6 +95,7 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <li>
 <h3>Coloque as sementes nas plataformas</h3>
 <p>Solte cada semente no chão da plataforma correspondente.</p>
+<div class="platform-layout">
 <table aria-label="Posição das sementes por cor">
 <thead><tr><th scope="col">Semente</th><th scope="col">Plataforma</th></tr></thead>
 <tbody>
@@ -115,6 +119,7 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 </a>
 <figcaption><a href="https://imgur.com/U8Lyr5q">Abrir referência das plataformas</a></figcaption>
 </figure>
+</div>
 </li>
 <li>
 <h3>Proteja o coelho e entregue os bolinhos</h3>
