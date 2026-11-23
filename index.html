@@ -36,6 +36,11 @@ h1{font:700 clamp(2.5rem,6vw,4.6rem)/1.05 Georgia,serif;margin:.45rem 0}
 .guide h3{line-height:1.25;margin:1.5rem 0 .5rem}
 .loot{padding:1rem;background:#f9f0d9;border-radius:.65rem}
 .loot h3{margin:0}
+.reward{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.reward img{width:2.25rem;height:2.25rem;object-fit:contain;image-rendering:pixelated}
+.annotated{display:inline-block;position:relative;max-width:100%;vertical-align:top}
+.seed{position:absolute;width:25px;height:28px;transform:translate(-50%,-50%);border-radius:50%;background:#fff url('https://i.imgur.com/jStFQ12.png') var(--sprite) / 700px 79px no-repeat;outline:2px solid #344d3e}
+.growlie-ring{position:absolute;left:71.5%;top:60%;width:29%;height:67%;transform:translate(-50%,-50%);border:3px solid #db292d;border-radius:50%;box-shadow:0 0 0 1px white}
 .steps{padding-inline-start:1.4rem}
 .steps li::marker{font-weight:800;color:var(--accent)}
 figure{margin:1rem 0}
@@ -72,12 +77,13 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <h2 id="henesys-title">Henesys PQ</h2>
 <div class="loot">
 <h3>Loot importante</h3>
-<p><a href="https://dreamms.gg/equipment/1002798/a-rice-cake-on-top-of-my-head">A Rice Cake on Top of My Head</a> tem chance estimada de <strong>25% a 30%</strong> ao completar a PQ. O chapéu faz parte do <strong>PQ Set</strong> e é uma boa opção para iniciantes.</p>
+<p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/item/1002798/icon?resize=4" alt=""><a href="https://dreamms.gg/equipment/1002798/a-rice-cake-on-top-of-my-head">A Rice Cake on Top of My Head</a> · 25% a 30% de chance ao completar</p>
+<p>O chapéu faz parte do <strong>Party Quest Set</strong>.</p>
 </div>
 <ol class="steps">
 <li>
 <h3>Colete as seis sementes</h3>
-<p>Bata nas plantas com o <strong>ataque básico</strong> até conseguir <strong>uma semente de cada cor</strong>. As posições das plantas são fixas.</p>
+<p>Bata nas plantas com o <strong>ataque básico</strong> até conseguir <strong>uma semente de cada cor</strong>. Use a imagem como referência de coleta.</p>
 <figure>
 <a href="https://imgur.com/jStFQ12"><img src="https://i.imgur.com/jStFQ12.png" alt="Mapa de referência com a posição das plantas de Henesys PQ" loading="lazy"></a>
 <figcaption><a href="https://imgur.com/jStFQ12">Abrir referência das plantas</a></figcaption>
@@ -98,7 +104,15 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 </tbody>
 </table>
 <figure>
-<a href="https://imgur.com/U8Lyr5q"><img src="https://i.imgur.com/U8Lyr5q.png" alt="Mapa de referência com as seis plataformas em que as sementes devem ser colocadas" loading="lazy"></a>
+<a class="annotated" href="https://imgur.com/U8Lyr5q">
+<img src="https://i.imgur.com/U8Lyr5q.png" alt="Mapa das seis plataformas com as sementes nas posições da tabela" width="700" height="500" loading="lazy">
+<span class="seed" style="left:28.5%;top:12%;--sprite:-293px -3px" aria-hidden="true"></span>
+<span class="seed" style="left:72.5%;top:12%;--sprite:-148px -6px" aria-hidden="true"></span>
+<span class="seed" style="left:6.5%;top:53%;--sprite:-614px -6px" aria-hidden="true"></span>
+<span class="seed" style="left:94.5%;top:53%;--sprite:-20px -3px" aria-hidden="true"></span>
+<span class="seed" style="left:28.5%;top:94%;--sprite:-438px -3px" aria-hidden="true"></span>
+<span class="seed" style="left:72.5%;top:94%;--sprite:-235px -29px" aria-hidden="true"></span>
+</a>
 <figcaption><a href="https://imgur.com/U8Lyr5q">Abrir referência das plataformas</a></figcaption>
 </figure>
 </li>
@@ -106,8 +120,8 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <h3>Proteja o coelho e entregue os bolinhos</h3>
 <p>Depois que as seis sementes forem colocadas, o coelho aparece e começa a preparar os bolinhos. Proteja-o dos monstros até ele produzir <strong>10 bolinhos</strong>. O <strong>líder da party</strong> deve coletar os dez e falar com <strong>Growlie</strong> para concluir a PQ.</p>
 <figure>
-<a href="https://i.imgur.com/SpG3tDe.gif"><img src="https://i.imgur.com/SpG3tDe.gif" alt="Demonstração em GIF da etapa final da Henesys PQ" loading="lazy"></a>
-<figcaption><a href="https://i.imgur.com/SpG3tDe.gif">Abrir demonstração em GIF</a></figcaption>
+<a class="annotated" href="https://i.imgur.com/SpG3tDe.gif"><img src="https://i.imgur.com/SpG3tDe.gif" alt="Tory, Tommy e Growlie, com Growlie circulado à direita" width="330" height="144" loading="lazy"><span class="growlie-ring" aria-hidden="true"></span></a>
+<figcaption><a href="https://i.imgur.com/SpG3tDe.gif">Abrir imagem dos NPCs</a></figcaption>
 </figure>
 </li>
 </ol>
