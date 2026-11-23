@@ -19,6 +19,7 @@ nav{margin-top:2.8rem}
 nav h2{font-size:.94rem;color:#c0dac9;margin:0 0 .8rem}
 nav a{display:block;background:#315a47;border:1px solid #688775;border-radius:.55rem;padding:.65rem .85rem;text-decoration:none;font-weight:700}
 nav a:hover{background:#416e55}
+nav a+a{margin-top:.5rem}
 main{width:min(100%,68rem);margin-inline:auto;padding:clamp(1rem,4vw,3rem)}
 .hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(1.45rem,5vw,3.8rem);min-height:17rem;border:1px solid #adcdba;border-radius:1.3rem;background:linear-gradient(165deg,#deefef 5%,#eaf2cd 85%);display:flex;align-items:center}
 .hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;background:#a8c791;width:75%;height:64%;right:-14%;bottom:-38%;transform:rotate(-14deg)}
@@ -32,6 +33,17 @@ h1{font:700 clamp(2.5rem,6vw,4.6rem)/1.05 Georgia,serif;margin:.45rem 0}
 .guide:target{border-color:#698f68}
 .guide h2{margin:.35rem 0 .75rem;font:700 2rem Georgia,serif}
 .guide p{color:var(--muted);margin:.5rem 0}
+.guide h3{line-height:1.25;margin:1.5rem 0 .5rem}
+.loot{padding:1rem;background:#f9f0d9;border-radius:.65rem}
+.loot h3{margin:0}
+.steps{padding-inline-start:1.4rem}
+.steps li::marker{font-weight:800;color:var(--accent)}
+figure{margin:1rem 0}
+figure img{display:block;max-width:100%;height:auto;border-radius:.55rem}
+figcaption{margin-top:.4rem;color:var(--muted)}
+table{border-collapse:collapse;width:min(100%,32rem)}
+th,td{padding:.45rem .7rem;text-align:left;border-bottom:1px solid var(--line)}
+thead{background:#eef5eb}
 footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 @media(max-width:680px){.shell{grid-template-columns:1fr}aside{padding:1rem}nav{margin-top:1rem}.hero{min-height:13rem}}
 </style>
@@ -42,6 +54,7 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <a class="brand" href="./"><span class="logo" aria-hidden="true">🍁</span> Oracle Dream</a>
 <nav aria-labelledby="guides-nav">
 <h2 id="guides-nav">Party Quest Guides</h2>
+<a href="#henesys">Henesys PQ · Lv. 10+</a>
 <a href="#genesis">Gênesis</a>
 </nav>
 </aside>
@@ -54,6 +67,51 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <p>Guias em português para jogar em grupo no Dream MS.</p>
 </div>
 </header>
+<section class="guide" id="henesys" aria-labelledby="henesys-title">
+<span class="label">Lv. 10+</span>
+<h2 id="henesys-title">Henesys PQ</h2>
+<div class="loot">
+<h3>Loot importante</h3>
+<p><a href="https://dreamms.gg/equipment/1002798/a-rice-cake-on-top-of-my-head">A Rice Cake on Top of My Head</a> tem chance estimada de <strong>25% a 30%</strong> ao completar a PQ. O chapéu faz parte do <strong>PQ Set</strong> e é uma boa opção para iniciantes.</p>
+</div>
+<ol class="steps">
+<li>
+<h3>Colete as seis sementes</h3>
+<p>Bata nas plantas com o <strong>ataque básico</strong> até conseguir <strong>uma semente de cada cor</strong>. As posições das plantas são fixas.</p>
+<figure>
+<a href="https://imgur.com/jStFQ12"><img src="https://i.imgur.com/jStFQ12.png" alt="Mapa de referência com a posição das plantas de Henesys PQ" loading="lazy"></a>
+<figcaption><a href="https://imgur.com/jStFQ12">Abrir referência das plantas</a></figcaption>
+</figure>
+</li>
+<li>
+<h3>Coloque as sementes nas plataformas</h3>
+<p>Solte cada semente no chão da plataforma correspondente.</p>
+<table aria-label="Posição das sementes por cor">
+<thead><tr><th scope="col">Semente</th><th scope="col">Plataforma</th></tr></thead>
+<tbody>
+<tr><th scope="row">Azul (Blue)</th><td>Superior esquerda</td></tr>
+<tr><th scope="row">Verde (Green)</th><td>Superior direita</td></tr>
+<tr><th scope="row">Amarela (Yellow)</th><td>Esquerda</td></tr>
+<tr><th scope="row">Roxa (Purple)</th><td>Direita</td></tr>
+<tr><th scope="row">Marrom (Brown)</th><td>Inferior esquerda</td></tr>
+<tr><th scope="row">Rosa (Pink)</th><td>Inferior direita</td></tr>
+</tbody>
+</table>
+<figure>
+<a href="https://imgur.com/U8Lyr5q"><img src="https://i.imgur.com/U8Lyr5q.png" alt="Mapa de referência com as seis plataformas em que as sementes devem ser colocadas" loading="lazy"></a>
+<figcaption><a href="https://imgur.com/U8Lyr5q">Abrir referência das plataformas</a></figcaption>
+</figure>
+</li>
+<li>
+<h3>Proteja o coelho e entregue os bolinhos</h3>
+<p>Depois que as seis sementes forem colocadas, o coelho aparece e começa a preparar os bolinhos. Proteja-o dos monstros até ele produzir <strong>10 bolinhos</strong>. O <strong>líder da party</strong> deve coletar os dez e falar com <strong>Growlie</strong> para concluir a PQ.</p>
+<figure>
+<a href="https://i.imgur.com/SpG3tDe.gif"><img src="https://i.imgur.com/SpG3tDe.gif" alt="Demonstração em GIF da etapa final da Henesys PQ" loading="lazy"></a>
+<figcaption><a href="https://i.imgur.com/SpG3tDe.gif">Abrir demonstração em GIF</a></figcaption>
+</figure>
+</li>
+</ol>
+</section>
 <section class="guide" id="genesis" aria-labelledby="genesis-title">
 <span class="label">Em preparação</span>
 <h2 id="genesis-title">Gênesis</h2>
