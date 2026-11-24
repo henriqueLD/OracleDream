@@ -38,9 +38,10 @@ main:not(:has(.guide:target)) .guide:not(#henesys){display:none}
 .loot{padding:1rem;background:#f3eaf8;border-radius:.65rem}
 .loot h3{margin:0}
 .reward{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.reward img,.kp-mobs img,.kp-flow img{zoom:1.5}
 .reward img{width:2.25rem;height:2.25rem;object-fit:contain;image-rendering:pixelated}
 .annotated{display:inline-block;position:relative;max-width:100%;vertical-align:top}
-.seed{position:absolute;width:25px;height:28px;transform:translate(-50%,-50%);border-radius:50%;background:#fff url('https://i.imgur.com/jStFQ12.png') var(--sprite) / 700px 79px no-repeat;outline:2px solid #344d3e}
+.seed{position:absolute;width:25px;height:28px;transform:translate(-50%,-50%) scale(1.5);border-radius:50%;background:#fff url('https://i.imgur.com/jStFQ12.png') var(--sprite) / 700px 79px no-repeat;outline:2px solid #344d3e}
 .growlie-ring{position:absolute;left:71.5%;top:60%;width:29%;height:67%;transform:translate(-50%,-50%);border:3px solid #db292d;border-radius:50%;box-shadow:0 0 0 1px white}
 .steps{padding-inline-start:1.4rem}
 .steps li::marker{font-weight:800;color:var(--accent)}
@@ -79,7 +80,7 @@ nav a+a{margin-top:0}
 .kp-map{max-width:22rem}
 .kp-map a{display:block}
 .kp-map-final{max-width:34rem;margin-inline:auto}
-.kp-boss-layout{display:grid;grid-template-columns:minmax(0,22rem) minmax(6.5rem,1fr);gap:clamp(.4rem,2vw,1rem)}
+.kp-boss-layout{display:grid;grid-template-columns:minmax(0,22rem) minmax(7.5rem,1fr);gap:clamp(.4rem,2vw,1rem)}
 .kp-boss-map{display:block}
 .kp-boss-positions{position:relative;display:block;list-style:none;margin:0;padding:0}
 .kp-boss-positions li{position:absolute;top:var(--platform-y);inset-inline:0;transform:translateY(-50%)}
@@ -95,6 +96,7 @@ nav a+a{margin-top:0}
 .kp-controls button{font:inherit;color:var(--night);background:white;border:1px solid #b8a1c8;border-radius:.35rem;padding:.2rem .45rem;cursor:pointer}
 .kp-controls button:disabled{opacity:.5;cursor:default}
 #kerning .platform-layout figure{margin-block:.75rem}
+@media(max-width:420px){.platform-layout .seed{outline-width:1px}.kp-boss-positions a{font-size:.8rem;overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){.kp-track i{transition:none}}
 </style>
 </head>
