@@ -38,7 +38,7 @@ main:not(:has(.guide:target)) .guide:not(#henesys){display:none}
 .loot{padding:1rem;background:#f3eaf8;border-radius:.65rem}
 .loot h3{margin:0}
 .reward{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
-.reward img,.kp-mobs img,.kp-flow img{zoom:1.5}
+.reward img,.kp-flow img:not(.kp-monster-sprite){zoom:1.5}
 .reward img{width:2.25rem;height:2.25rem;object-fit:contain;image-rendering:pixelated}
 .annotated{display:inline-block;position:relative;max-width:100%;vertical-align:top}
 .seed{position:absolute;width:25px;height:28px;transform:translate(-50%,-50%) scale(1.5);border-radius:50%;background:#fff url('https://i.imgur.com/jStFQ12.png') var(--sprite) / 700px 79px no-repeat;outline:2px solid #344d3e}
@@ -70,7 +70,7 @@ nav a+a{margin-top:0}
 
 .kp-mobs{display:flex;flex-wrap:wrap;gap:.7rem;margin:.7rem 0}
 .kp-mobs a{display:flex;align-items:center;gap:.55rem;padding:.4rem .6rem}
-.kp-mobs img{display:block;width:auto;height:auto;max-width:5.5rem;max-height:5rem;image-rendering:pixelated}
+.kp-mobs img,.kp-flow img.kp-monster-sprite{display:block;width:auto;height:auto;max-width:min(340px,100%);max-height:340px;object-fit:contain;image-rendering:pixelated}
 .kp-rooms{list-style:none;padding-inline-start:0}
 .kp-flow{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1rem 0}
 .kp-flow li{display:flex;align-items:center;gap:.5rem}
@@ -79,13 +79,14 @@ nav a+a{margin-top:0}
 .kp-flow img{display:block;width:3.5rem;height:3.5rem;object-fit:scale-down;image-rendering:pixelated}
 .kp-map{max-width:22rem}
 .kp-map a{display:block}
-.kp-map-final{max-width:34rem;margin-inline:auto}
-.kp-boss-layout{display:grid;grid-template-columns:minmax(0,22rem) minmax(7.5rem,1fr);gap:clamp(.4rem,2vw,1rem)}
+.kp-map-final{max-width:44rem;margin-inline:auto}
+.kp-boss-layout{display:grid;grid-template-columns:minmax(0,22rem) minmax(0,1fr);gap:clamp(.4rem,2vw,1rem)}
 .kp-boss-map{display:block}
 .kp-boss-positions{position:relative;display:block;list-style:none;margin:0;padding:0}
 .kp-boss-positions li{position:absolute;top:var(--platform-y);inset-inline:0;transform:translateY(-50%)}
 .kp-boss-positions a{padding:0;gap:.3rem;font-size:.875rem;line-height:1.2}
-.kp-boss-positions img{max-width:clamp(1.4rem,5vw,3.5rem);max-height:3.5rem;flex-shrink:0}
+.kp-boss-positions a{flex-wrap:wrap}
+@media(max-width:680px){.kp-boss-positions img{max-width:100%;max-height:clamp(2rem,14vw,6rem)}}
 .kp-table{margin:.6rem 0}
 .kp-table caption{text-align:left;font-weight:700;margin-bottom:.35rem}
 .kp-demo{background:#efe7f6;border-radius:.65rem;padding:.75rem;margin:.7rem 0}
@@ -195,7 +196,7 @@ nav a+a{margin-top:0}
 <p><strong>Obs.</strong> Se sobrar cupom, solte o excesso antes de falar com ela.</p>
 <ol class="kp-flow" aria-label="Ordem da sala 1">
 <li><a href="https://dreamms.gg/npcs/9020001/cloto"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt="Cloto" loading="lazy"></a></li>
-<li><a href="https://dreamms.gg/monsters/9300001/ligator-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300001/move?format=webp" alt="Ligator" loading="lazy"></a></li>
+<li><a href="https://dreamms.gg/monsters/9300001/ligator-pc"><img class="kp-monster-sprite" src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300001/move" alt="Ligator" loading="lazy"></a></li>
 <li><img src="https://api.dreamms.gg/api/gms/latest/item/4001007/icon" alt="Coupon" title="Coupon" loading="lazy"></li>
 <li><a href="https://dreamms.gg/npcs/9020001/cloto"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt="Cloto" loading="lazy"></a></li>
 <li><a href="https://dreamms.gg/items/4001008/pass"><img src="https://api.dreamms.gg/api/gms/latest/item/4001008/icon" alt="Pass" loading="lazy"></a></li>
@@ -314,9 +315,9 @@ nav a+a{margin-top:0}
 <div class="kp-boss-layout">
 <a class="kp-boss-map" href="https://osmsdataexplorer.com/#maps?q=id%3A080000400"><img src="https://osmsdataexplorer.com/data/maps/7006085970c30bf0eda3b8e4e6f45715.webp" width="1630" height="3040" alt="Mapa da última sala da Kerning PQ. Curse Eye na plataforma superior, Jr. Necki na intermediária e King Slime no fundo." loading="lazy"></a>
 <ol class="kp-mobs kp-boss-positions" aria-label="Monstros por plataforma, de cima para baixo">
-<li style="--platform-y:32.73%"><a href="https://dreamms.gg/monsters/9300002/curse-eye-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300002/move?format=webp" alt="" loading="lazy">3 × Curse Eye</a></li>
-<li style="--platform-y:56.41%"><a href="https://dreamms.gg/monsters/9300000/jr-necki-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300000/move?format=webp" alt="" loading="lazy">6 × Jr. Necki</a></li>
-<li style="--platform-y:89.97%"><a href="https://dreamms.gg/monsters/9300003/king-slime"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300003/move?format=webp" alt="" loading="lazy">King Slime</a></li>
+<li style="--platform-y:32.73%"><a href="https://dreamms.gg/monsters/9300002/curse-eye-pc"><img class="kp-monster-sprite" src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300002/move" alt="" loading="lazy">3 × Curse Eye</a></li>
+<li style="--platform-y:56.41%"><a href="https://dreamms.gg/monsters/9300000/jr-necki-pc"><img class="kp-monster-sprite" src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300000/move" alt="" loading="lazy">6 × Jr. Necki</a></li>
+<li style="--platform-y:89.97%"><a href="https://dreamms.gg/monsters/9300003/king-slime"><img class="kp-monster-sprite" src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300003/move" alt="" loading="lazy">King Slime</a></li>
 </ol>
 </div>
 <figcaption>Mapa da Sala 5 · <a href="https://osmsdataexplorer.com/#maps?q=id%3A080000400">OSMS Data Explorer</a></figcaption>
