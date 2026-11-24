@@ -54,6 +54,20 @@ th,td{padding:.45rem .7rem;text-align:left;border-bottom:1px solid var(--line)}
 thead{background:#eef5eb}
 footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 @media(max-width:680px){.shell{grid-template-columns:1fr}aside{padding:1rem}nav{margin-top:1rem}.hero{min-height:13rem}}
+
+.kp-map{max-width:22rem}
+.kp-map a{display:block}
+.kp-table{margin:.6rem 0}
+.kp-table caption{text-align:left;font-weight:700;margin-bottom:.35rem}
+.kp-demo{background:#eef5eb;border-radius:.65rem;padding:.75rem;margin:.7rem 0}
+.kp-track{display:grid;grid-template-columns:repeat(var(--positions),minmax(0,1fr));position:relative;gap:.2rem;padding:1.8rem 0 .25rem;text-align:center}
+.kp-track span{border:1px solid #b9ccba;border-radius:.35rem;padding:.15rem}
+.kp-track i{position:absolute;top:.15rem;left:calc((var(--slot) + .5) * 100% / var(--positions));width:1.25rem;height:1.25rem;transform:translateX(-50%);background:var(--forest);color:white;border-radius:50%;font:700 .8rem/1.25rem system-ui;transition:left .35s ease}
+.kp-controls{display:flex;flex-wrap:wrap;gap:.35rem}
+.kp-controls button{font:inherit;color:var(--forest);background:white;border:1px solid #9bb49d;border-radius:.35rem;padding:.2rem .45rem;cursor:pointer}
+.kp-controls button:disabled{opacity:.5;cursor:default}
+#kerning .platform-layout figure{margin-block:.75rem}
+@media(prefers-reduced-motion:reduce){.kp-track i{transition:none}}
 </style>
 </head>
 <body>
@@ -63,6 +77,7 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <nav aria-labelledby="guides-nav">
 <h2 id="guides-nav">Party Quest Guides</h2>
 <a href="#henesys">Henesys PQ · Lv. 10+</a>
+<a href="#kerning">Kerning PQ · Lv. 21+</a>
 </nav>
 </aside>
 <main>
@@ -128,8 +143,209 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 </li>
 </ol>
 </section>
+<section class="guide" id="kerning" aria-labelledby="kerning-title">
+<span class="label">Lv. 21+</span>
+<h2 id="kerning-title">Kerning PQ</h2>
+<p>Forme uma party de <strong>3 a 6 pessoas</strong>. No <strong>Dimensional Mirror</strong>, entre na <strong>Party Quest Zone</strong> e fale com <strong>Lakelis</strong>. <a href="https://forum.dreamms.gg/threads/universal-pq-map-party-quest-zone-improvements.9676/">Requisitos no Dream MS</a>.</p>
+<div class="loot">
+<h3>Loot importante</h3>
+<p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/item/1072369/icon?resize=4" alt=""><a href="https://dreamms.gg/equipment/1072369/squishy-shoes">Squishy Shoes</a> · 90% de chance no King Slime da PQ, segundo o DreamLib. Cai um par, para um jogador pegar.</p>
+<p>A bota faz parte do <strong>Party Quest Set</strong>.</p>
+</div>
+<ol class="steps">
+<li>
+<h3>Sala 1 · Cupons da Cloto</h3>
+<p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt=""><a href="https://dreamms.gg/npcs/9020001/cloto">Cloto</a></p>
+<p>Fale com Cloto para receber uma pergunta. Derrote <a href="https://dreamms.gg/monsters/9300001/ligator-pc">Ligator</a> e fique com o <strong>número exato de cupons</strong> que responde à pergunta. Se sobrar cupom, solte o excesso antes de falar com ela.</p>
+<p>Cloto troca os cupons por um <strong><a href="https://dreamms.gg/items/4001008/pass">Pass</a></strong>. Quem receber o item deve soltá-lo para o líder. O líder recolhe os Passes e fala com Cloto para abrir a passagem.</p>
+<p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/item/4001008/icon?resize=4" alt=""><a href="https://dreamms.gg/items/4001008/pass">Pass</a></p>
+<table class="kp-table">
+<caption>Perguntas de referência · lista parcial</caption>
+<thead><tr><th scope="col">Pergunta da Cloto</th><th scope="col">Cupons</th></tr></thead>
+<tbody>
+<tr><th scope="row">Level to become a Warrior, Magician, Bowman or Thief</th><td>10</td></tr>
+<tr><th scope="row">EXP needed to reach level 2</th><td>15</td></tr>
+<tr><th scope="row">Level needed to enter KPQ</th><td>21</td></tr>
+<tr><th scope="row">Total AP gained from level 1 to level 6</th><td>25</td></tr>
+<tr><th scope="row">Level needed for 2nd Job Advancement</th><td>30</td></tr>
+<tr><th scope="row">Total of SP a beginner receives</th><td>6</td></tr>
+</tbody>
+</table>
+</li>
+<li>
+<h3>Sala 2 · Cipós</h3>
+<p>Três jogadores se penduram em três dos quatro cipós. Fiquem da metade para cima para facilitar o registro da posição e aguardem o líder confirmar cada tentativa.</p>
+<div class="platform-layout">
+<div>
+<div class="kp-demo" data-positions="ABCD" data-attempts="ABC ABD ACD BCD" hidden>
+<div class="kp-track" aria-hidden="true"></div>
+<p class="kp-progress" aria-live="polite"></p>
+<div class="kp-controls">
+<button type="button" data-action="prev">Anterior</button>
+<button type="button" data-action="next">Próxima</button>
+<button type="button" data-action="play">Reproduzir</button>
+</div>
+</div>
+<details><summary>Ver 4 tentativas</summary>
+<table class="kp-table"><thead><tr><th scope="col">Tentativa</th><th scope="col">Posições</th><th scope="col">Ocupação</th></tr></thead><tbody>
+<tr><th scope="row">1</th><td>A–B–C</td><td aria-hidden="true">● ● ● ○</td></tr>
+<tr><th scope="row">2</th><td>A–B–D</td><td aria-hidden="true">● ● ○ ●</td></tr>
+<tr><th scope="row">3</th><td>A–C–D</td><td aria-hidden="true">● ○ ● ●</td></tr>
+<tr><th scope="row">4</th><td>B–C–D</td><td aria-hidden="true">○ ● ● ●</td></tr>
+</tbody></table></details>
+</div>
+<figure class="kp-map"><a href="https://meowdb.com/msclassic/guides/kerning-city-party-quest-kpq-guide/stage2-ropes-labeled.webp"><img src="https://meowdb.com/msclassic/guides/kerning-city-party-quest-kpq-guide/stage2-ropes-labeled.webp" alt="Cipós com as posições numeradas ou identificadas por letras" loading="lazy"></a></figure>
+</div>
+</li>
+<li>
+<h3>Sala 3 · Plataformas dos gatinhos</h3>
+<p>Ocupem três das cinco plataformas. Identifiquem cada plataforma pela quantidade de gatinhos e peçam ao líder para confirmar cada combinação.</p>
+<div class="platform-layout">
+<div>
+<div class="kp-demo" data-positions="12345" data-attempts="123 124 125 134 135 145 234 235 245 345" hidden>
+<div class="kp-track" aria-hidden="true"></div>
+<p class="kp-progress" aria-live="polite"></p>
+<div class="kp-controls">
+<button type="button" data-action="prev">Anterior</button>
+<button type="button" data-action="next">Próxima</button>
+<button type="button" data-action="play">Reproduzir</button>
+</div>
+</div>
+<details><summary>Ver 10 tentativas</summary>
+<table class="kp-table"><thead><tr><th scope="col">Tentativa</th><th scope="col">Posições</th><th scope="col">Ocupação</th></tr></thead><tbody>
+<tr><th scope="row">1</th><td>1–2–3</td><td aria-hidden="true">● ● ● ○ ○</td></tr>
+<tr><th scope="row">2</th><td>1–2–4</td><td aria-hidden="true">● ● ○ ● ○</td></tr>
+<tr><th scope="row">3</th><td>1–2–5</td><td aria-hidden="true">● ● ○ ○ ●</td></tr>
+<tr><th scope="row">4</th><td>1–3–4</td><td aria-hidden="true">● ○ ● ● ○</td></tr>
+<tr><th scope="row">5</th><td>1–3–5</td><td aria-hidden="true">● ○ ● ○ ●</td></tr>
+<tr><th scope="row">6</th><td>1–4–5</td><td aria-hidden="true">● ○ ○ ● ●</td></tr>
+<tr><th scope="row">7</th><td>2–3–4</td><td aria-hidden="true">○ ● ● ● ○</td></tr>
+<tr><th scope="row">8</th><td>2–3–5</td><td aria-hidden="true">○ ● ● ○ ●</td></tr>
+<tr><th scope="row">9</th><td>2–4–5</td><td aria-hidden="true">○ ● ○ ● ●</td></tr>
+<tr><th scope="row">10</th><td>3–4–5</td><td aria-hidden="true">○ ○ ● ● ●</td></tr>
+</tbody></table></details>
+</div>
+<figure class="kp-map"><a href="https://meowdb.com/msclassic/guides/kerning-city-party-quest-kpq-guide/stage3-kittens-labeled.webp"><img src="https://meowdb.com/msclassic/guides/kerning-city-party-quest-kpq-guide/stage3-kittens-labeled.webp" alt="Plataformas dos gatinhos com as posições numeradas ou identificadas por letras" loading="lazy"></a></figure>
+</div>
+</li>
+<li>
+<h3>Sala 4 · Barris</h3>
+<p>Ocupem três dos seis barris, usando a numeração da imagem. O líder confirma cada combinação quando todos estiverem posicionados.</p>
+<div class="platform-layout">
+<div>
+<div class="kp-demo" data-positions="123456" data-attempts="123 124 125 126 134 135 136 145 146 156 234 235 236 245 246 256 345 346 356 456" hidden>
+<div class="kp-track" aria-hidden="true"></div>
+<p class="kp-progress" aria-live="polite"></p>
+<div class="kp-controls">
+<button type="button" data-action="prev">Anterior</button>
+<button type="button" data-action="next">Próxima</button>
+<button type="button" data-action="play">Reproduzir</button>
+</div>
+</div>
+<details><summary>Ver 20 tentativas</summary>
+<table class="kp-table"><thead><tr><th scope="col">Tentativa</th><th scope="col">Posições</th><th scope="col">Ocupação</th></tr></thead><tbody>
+<tr><th scope="row">1</th><td>1–2–3</td><td aria-hidden="true">● ● ● ○ ○ ○</td></tr>
+<tr><th scope="row">2</th><td>1–2–4</td><td aria-hidden="true">● ● ○ ● ○ ○</td></tr>
+<tr><th scope="row">3</th><td>1–2–5</td><td aria-hidden="true">● ● ○ ○ ● ○</td></tr>
+<tr><th scope="row">4</th><td>1–2–6</td><td aria-hidden="true">● ● ○ ○ ○ ●</td></tr>
+<tr><th scope="row">5</th><td>1–3–4</td><td aria-hidden="true">● ○ ● ● ○ ○</td></tr>
+<tr><th scope="row">6</th><td>1–3–5</td><td aria-hidden="true">● ○ ● ○ ● ○</td></tr>
+<tr><th scope="row">7</th><td>1–3–6</td><td aria-hidden="true">● ○ ● ○ ○ ●</td></tr>
+<tr><th scope="row">8</th><td>1–4–5</td><td aria-hidden="true">● ○ ○ ● ● ○</td></tr>
+<tr><th scope="row">9</th><td>1–4–6</td><td aria-hidden="true">● ○ ○ ● ○ ●</td></tr>
+<tr><th scope="row">10</th><td>1–5–6</td><td aria-hidden="true">● ○ ○ ○ ● ●</td></tr>
+<tr><th scope="row">11</th><td>2–3–4</td><td aria-hidden="true">○ ● ● ● ○ ○</td></tr>
+<tr><th scope="row">12</th><td>2–3–5</td><td aria-hidden="true">○ ● ● ○ ● ○</td></tr>
+<tr><th scope="row">13</th><td>2–3–6</td><td aria-hidden="true">○ ● ● ○ ○ ●</td></tr>
+<tr><th scope="row">14</th><td>2–4–5</td><td aria-hidden="true">○ ● ○ ● ● ○</td></tr>
+<tr><th scope="row">15</th><td>2–4–6</td><td aria-hidden="true">○ ● ○ ● ○ ●</td></tr>
+<tr><th scope="row">16</th><td>2–5–6</td><td aria-hidden="true">○ ● ○ ○ ● ●</td></tr>
+<tr><th scope="row">17</th><td>3–4–5</td><td aria-hidden="true">○ ○ ● ● ● ○</td></tr>
+<tr><th scope="row">18</th><td>3–4–6</td><td aria-hidden="true">○ ○ ● ● ○ ●</td></tr>
+<tr><th scope="row">19</th><td>3–5–6</td><td aria-hidden="true">○ ○ ● ○ ● ●</td></tr>
+<tr><th scope="row">20</th><td>4–5–6</td><td aria-hidden="true">○ ○ ○ ● ● ●</td></tr>
+</tbody></table></details>
+</div>
+<figure class="kp-map"><a href="https://meowdb.com/msclassic/guides/kerning-city-party-quest-kpq-guide/stage4-barrels.webp"><img src="https://meowdb.com/msclassic/guides/kerning-city-party-quest-kpq-guide/stage4-barrels.webp" alt="Barris com as posições numeradas ou identificadas por letras" loading="lazy"></a></figure>
+</div>
+</li>
+<li>
+<h3>Sala 5 · King Slime</h3>
+<p>Derrotem <strong>3</strong> <a href="https://dreamms.gg/monsters/9300000/jr-necki-pc">Jr. Neckis</a>, <strong>3</strong> <a href="https://dreamms.gg/monsters/9300002/curse-eye-pc">Curse Eyes</a> e o <a href="https://dreamms.gg/monsters/9300003/king-slime"><strong>King Slime</strong></a>. Recolham todos os <strong>Passes</strong> que caírem e passem para o líder, que fala com Cloto para concluir a PQ. O King Slime também pode derrubar as Squishy Shoes.</p>
+<figure class="kp-map"><a href="https://meowdb.com/msclassic/api/assets/maps/080000400?v=11"><img src="https://meowdb.com/msclassic/api/assets/maps/080000400?v=11" alt="Mapa de referência da última sala da Kerning PQ" loading="lazy"></a></figure>
+<p>A sala bônus é opcional. A PQ já está concluída quando Cloto aceita os Passes.</p>
+</li>
+</ol>
+<p><small>Mapas de referência de <a href="https://meowdb.com/msclassic/guides/kerning-city-party-quest-kpq-guide">NiaMeowDB</a>. Sprites do DreamLib.</small></p>
+</section>
 <footer>Oracle Dream · Projeto da comunidade</footer>
 </main>
 </div>
+<script>
+for (const demo of document.querySelectorAll('.kp-demo')) {
+  const positions = [...demo.dataset.positions];
+  const combinations = demo.dataset.attempts.split(' ');
+  const track = demo.querySelector('.kp-track');
+  const progress = demo.querySelector('.kp-progress');
+  const previous = demo.querySelector('[data-action="prev"]');
+  const next = demo.querySelector('[data-action="next"]');
+  const playback = demo.querySelector('[data-action="play"]');
+  track.style.setProperty('--positions', positions.length);
+
+  for (const position of positions) {
+    const label = document.createElement('span');
+    label.textContent = position;
+    track.append(label);
+  }
+  const players = [...combinations[0]].map((position, index) => {
+    const marker = document.createElement('i');
+    marker.textContent = index + 1;
+    track.append(marker);
+    return { marker, position };
+  });
+  let attempt = 0;
+  let timer;
+
+  function show(target) {
+    const occupied = players.map(player => player.position);
+    const destination = [...combinations[target]];
+    const free = destination.filter(position => !occupied.includes(position));
+    const movements = [];
+    players.forEach((player, index) => {
+      if (!destination.includes(player.position)) {
+        const newPosition = free.shift();
+        movements.push('J' + (index + 1) + ' ' + player.position + ' → ' + newPosition);
+        player.position = newPosition;
+      }
+      player.marker.style.setProperty('--slot', positions.indexOf(player.position));
+    });
+    attempt = target;
+    progress.textContent = 'Tentativa ' + (attempt + 1) + ' de ' + combinations.length +
+      ' · ' + destination.join('–') + (movements.length ? ' · ' + movements.join(', ') : '');
+    previous.disabled = attempt === 0;
+    next.disabled = attempt === combinations.length - 1;
+  }
+
+  function pause() {
+    clearInterval(timer);
+    timer = undefined;
+    playback.textContent = 'Reproduzir';
+  }
+
+  previous.addEventListener('click', () => { pause(); show(attempt - 1); });
+  next.addEventListener('click', () => { pause(); show(attempt + 1); });
+  playback.addEventListener('click', () => {
+    if (timer) { pause(); return; }
+    if (next.disabled) show(0);
+    playback.textContent = 'Pausar';
+    timer = setInterval(() => {
+      show(attempt + 1);
+      if (next.disabled) pause();
+    }, 1800);
+  });
+  show(0);
+  demo.hidden = false;
+}
+</script>
 </body>
 </html>
