@@ -6,38 +6,36 @@
 <meta name="description" content="Guias de Party Quests para o Dream MS.">
 <title>Oracle Dream · Party Quest Guides</title>
 <style>
-:root{color-scheme:light;--ink:#242c27;--muted:#4f6055;--forest:#183d32;--line:#dce7db;--paper:#fcfdf9;--accent:#a43f20}
+:root{color-scheme:light;--ink:#2e2438;--muted:#5f536b;--night:#342345;--line:#e3dbea;--paper:#fcfdf9;--accent:#75428e}
 *{box-sizing:border-box}
-body{margin:0;background:#eff5ec;color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
+body{margin:0;background:linear-gradient(150deg,#eee4f7 4%,#e6d9f1 52%,#deeff5 100%);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
 a{color:inherit}
-a:focus-visible,summary:focus-visible{outline:3px solid #bc681e;outline-offset:4px}
+a:focus-visible,summary:focus-visible{outline:3px solid #8457ab;outline-offset:4px}
 .shell{display:grid;grid-template-columns:17rem minmax(0,1fr);min-height:100vh}
-aside{position:sticky;top:0;align-self:start;height:100dvh;overflow:auto;background:var(--forest);color:white;padding:2rem 1.4rem}
+aside{position:sticky;top:0;align-self:start;height:100dvh;overflow:auto;background:var(--night);color:white;padding:2rem 1.4rem}
 .brand{display:flex;align-items:center;gap:.7rem;font-weight:800;font-size:1.28rem;text-decoration:none}
-.logo{background:#fce5a8;border-radius:.65rem;padding:.26rem .52rem;color:#873727}
+.brand{border-bottom:1px solid #735d86;padding-bottom:1.1rem}
 nav{margin-top:2.8rem}
-nav h2{font-size:.94rem;color:#c0dac9;margin:0 0 .8rem}
-nav a{display:block;background:#315a47;border:1px solid #688775;border-radius:.55rem;padding:.65rem .85rem;text-decoration:none;font-weight:700}
-nav a:hover,nav a[aria-current="location"]{background:#416e55}
-nav a[aria-current="location"]{border-color:#b6d3bb}
+nav h2{font-size:.94rem;color:#e4d8f0;margin:0 0 .8rem}
+nav a{display:block;background:#473457;border:1px solid #735d86;border-radius:.55rem;padding:.65rem .85rem;text-decoration:none;font-weight:700}
+nav a:hover,nav a[aria-current="location"]{background:#5d4373}
+nav a[aria-current="location"]{border-color:#9de5f5}
 nav a+a{margin-top:.5rem}
 main{width:min(100%,68rem);margin-inline:auto;padding:clamp(1rem,4vw,3rem)}
-.hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(1.45rem,5vw,3.8rem);min-height:17rem;border:1px solid #adcdba;border-radius:1.3rem;background:linear-gradient(165deg,#deefef 5%,#eaf2cd 85%);display:flex;align-items:center}
-.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;background:#a8c791;width:75%;height:64%;right:-14%;bottom:-38%;transform:rotate(-14deg)}
-.hero::after{background:#82ad7e;right:18%;bottom:-50%;transform:rotate(15deg)}
-.sun{position:absolute;z-index:-1;right:12%;top:13%;width:clamp(3rem,10vw,7rem);aspect-ratio:1;border-radius:50%;background:#f9dc91}
-.hero p{margin:.5rem 0 0;color:#344d3e}
+.hero{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.6rem;padding:clamp(1.45rem,4vw,3rem);min-height:17rem;border:1px solid #a989bf;border-radius:1.3rem;background:radial-gradient(ellipse at 86% 24%,#ddf5fc 0%,transparent 52%),linear-gradient(145deg,#f9effc,#d9c5ec 70%,#e5dbf4)}
+.hero p{margin:.5rem 0 0;color:#574361}
+.hero-logo{width:min(100%,19rem);height:auto;display:block}
 h1,h2{line-height:1.15}
-h1{font:700 clamp(2.5rem,6vw,4.6rem)/1.05 Georgia,serif;margin:.45rem 0}
+h1{font:700 clamp(2.4rem,4.8vw,4rem)/1.05 Georgia,serif;margin:.45rem 0}
 .label{font-size:.88rem;font-weight:800;letter-spacing:.05em;color:var(--accent)}
 .guide{margin-top:1.5rem;padding:clamp(1.2rem,4vw,2rem);background:var(--paper);border:1px solid var(--line);border-radius:1rem;scroll-margin:1rem}
-.guide:target{border-color:#698f68}
+.guide:target{border-color:#9b73af}
 main:has(.guide:target) .guide:not(:target),
 main:not(:has(.guide:target)) .guide:not(#henesys){display:none}
 .guide h2{margin:.35rem 0 .75rem;font:700 2rem Georgia,serif}
 .guide p{color:var(--muted);margin:.5rem 0}
 .guide h3{line-height:1.25;margin:1.5rem 0 .5rem}
-.loot{padding:1rem;background:#f9f0d9;border-radius:.65rem}
+.loot{padding:1rem;background:#f3eaf8;border-radius:.65rem}
 .loot h3{margin:0}
 .reward{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
 .reward img{width:2.25rem;height:2.25rem;object-fit:contain;image-rendering:pixelated}
@@ -54,12 +52,13 @@ table{border-collapse:collapse;width:min(100%,32rem)}
 .platform-layout figure{margin:0}
 @media(max-width:1050px){.platform-layout{grid-template-columns:1fr}.platform-layout figure{max-width:22rem}}
 th,td{padding:.45rem .7rem;text-align:left;border-bottom:1px solid var(--line)}
-thead{background:#eef5eb}
+thead{background:#efe7f6}
 footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 @media(max-width:680px){
 .shell{display:block}
 aside{z-index:1;height:auto;overflow:visible;padding:.65rem 1rem}
 aside .brand{display:none}
+.hero-logo{width:min(100%,14rem)}
 nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;margin:0}
 nav h2{flex-basis:100%;margin:0}
 nav a{padding:.3rem .55rem}
@@ -88,12 +87,12 @@ nav a+a{margin-top:0}
 .kp-boss-positions img{max-width:clamp(1.4rem,5vw,3.5rem);max-height:3.5rem;flex-shrink:0}
 .kp-table{margin:.6rem 0}
 .kp-table caption{text-align:left;font-weight:700;margin-bottom:.35rem}
-.kp-demo{background:#eef5eb;border-radius:.65rem;padding:.75rem;margin:.7rem 0}
+.kp-demo{background:#efe7f6;border-radius:.65rem;padding:.75rem;margin:.7rem 0}
 .kp-track{display:grid;grid-template-columns:repeat(var(--positions),minmax(0,1fr));position:relative;gap:.2rem;padding:1.8rem 0 .25rem;text-align:center}
-.kp-track span{border:1px solid #b9ccba;border-radius:.35rem;padding:.15rem}
-.kp-track i{position:absolute;top:.15rem;left:calc((var(--slot) + .5) * 100% / var(--positions));width:1.25rem;height:1.25rem;transform:translateX(-50%);background:var(--forest);color:white;border-radius:50%;font:700 .8rem/1.25rem system-ui;transition:left .35s ease}
+.kp-track span{border:1px solid #d5c1e1;border-radius:.35rem;padding:.15rem}
+.kp-track i{position:absolute;top:.15rem;left:calc((var(--slot) + .5) * 100% / var(--positions));width:1.25rem;height:1.25rem;transform:translateX(-50%);background:var(--night);color:white;border-radius:50%;font:700 .8rem/1.25rem system-ui;transition:left .35s ease}
 .kp-controls{display:flex;flex-wrap:wrap;gap:.35rem}
-.kp-controls button{font:inherit;color:var(--forest);background:white;border:1px solid #9bb49d;border-radius:.35rem;padding:.2rem .45rem;cursor:pointer}
+.kp-controls button{font:inherit;color:var(--night);background:white;border:1px solid #b8a1c8;border-radius:.35rem;padding:.2rem .45rem;cursor:pointer}
 .kp-controls button:disabled{opacity:.5;cursor:default}
 #kerning .platform-layout figure{margin-block:.75rem}
 @media(prefers-reduced-motion:reduce){.kp-track i{transition:none}}
@@ -102,7 +101,7 @@ nav a+a{margin-top:0}
 <body>
 <div class="shell">
 <aside>
-<a class="brand" href="./"><span class="logo" aria-hidden="true">🍁</span> Oracle Dream</a>
+<a class="brand" href="./">Oracle Dream</a>
 <nav aria-labelledby="guides-nav">
 <h2 id="guides-nav">Party Quest Guides</h2>
 <a href="#henesys">Henesys PQ · Lv. 10+</a>
@@ -111,12 +110,12 @@ nav a+a{margin-top:0}
 </aside>
 <main>
 <header class="hero">
-<span class="sun" aria-hidden="true"></span>
 <div>
 <span class="label">MapleStory · Dream MS</span>
 <h1>Party Quest Guides</h1>
 <p>Guias em português para jogar em grupo no Dream MS.</p>
 </div>
+<img class="hero-logo" src="./dream-ms-logo.png" alt="Dream MS — 5th Anniversary">
 </header>
 <section class="guide" id="henesys" aria-labelledby="henesys-title">
 <span class="label">Lv. 10+</span>
