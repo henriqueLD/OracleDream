@@ -55,6 +55,9 @@ thead{background:#eef5eb}
 footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 @media(max-width:680px){.shell{grid-template-columns:1fr}aside{padding:1rem}nav{margin-top:1rem}.hero{min-height:13rem}}
 
+.kp-mobs{display:flex;flex-wrap:wrap;gap:.7rem;margin:.7rem 0}
+.kp-mobs a{display:flex;align-items:center;gap:.55rem;padding:.4rem .6rem;border:1px solid var(--line);border-radius:.55rem}
+.kp-mobs img{width:3rem;height:3rem;object-fit:contain;image-rendering:pixelated}
 .kp-map{max-width:22rem}
 .kp-map a{display:block}
 .kp-table{margin:.6rem 0}
@@ -157,20 +160,18 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <h3>Sala 1 · Cupons da Cloto</h3>
 <p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt=""><a href="https://dreamms.gg/npcs/9020001/cloto">Cloto</a></p>
 <p>Fale com Cloto para receber uma pergunta. Derrote <a href="https://dreamms.gg/monsters/9300001/ligator-pc">Ligator</a> e fique com o <strong>número exato de cupons</strong> que responde à pergunta. Se sobrar cupom, solte o excesso antes de falar com ela.</p>
+<div class="kp-mobs"><a href="https://dreamms.gg/monsters/9300001/ligator-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300001/icon" alt="" loading="lazy">Ligator</a></div>
 <p>Cloto troca os cupons por um <strong><a href="https://dreamms.gg/items/4001008/pass">Pass</a></strong>. Quem receber o item deve soltá-lo para o líder. O líder recolhe os Passes e fala com Cloto para abrir a passagem.</p>
 <p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/item/4001008/icon?resize=4" alt=""><a href="https://dreamms.gg/items/4001008/pass">Pass</a></p>
-<table class="kp-table">
-<caption>Perguntas de referência · lista parcial</caption>
-<thead><tr><th scope="col">Pergunta da Cloto</th><th scope="col">Cupons</th></tr></thead>
-<tbody>
-<tr><th scope="row">Level to become a Warrior, Magician, Bowman or Thief</th><td>10</td></tr>
-<tr><th scope="row">EXP needed to reach level 2</th><td>15</td></tr>
-<tr><th scope="row">Level needed to enter KPQ</th><td>21</td></tr>
-<tr><th scope="row">Total AP gained from level 1 to level 6</th><td>25</td></tr>
-<tr><th scope="row">Level needed for 2nd Job Advancement</th><td>30</td></tr>
-<tr><th scope="row">Total of SP a beginner receives</th><td>6</td></tr>
-</tbody>
-</table>
+<p><strong>Perguntas de referência · lista parcial</strong></p>
+<ul>
+<li>Level to become a Warrior, Magician, Bowman or Thief · <strong>10 cupons</strong></li>
+<li>EXP needed to reach level 2 · <strong>15 cupons</strong></li>
+<li>Level needed to enter KPQ · <strong>21 cupons</strong></li>
+<li>Total AP gained from level 1 to level 6 · <strong>25 cupons</strong></li>
+<li>Level needed for 2nd Job Advancement · <strong>30 cupons</strong></li>
+<li>Total of SP a beginner receives · <strong>6 cupons</strong></li>
+</ul>
 </li>
 <li>
 <h3>Sala 2 · Cipós</h3>
@@ -272,6 +273,7 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <li>
 <h3>Sala 5 · King Slime</h3>
 <p>Derrotem <strong>3</strong> <a href="https://dreamms.gg/monsters/9300000/jr-necki-pc">Jr. Neckis</a>, <strong>3</strong> <a href="https://dreamms.gg/monsters/9300002/curse-eye-pc">Curse Eyes</a> e o <a href="https://dreamms.gg/monsters/9300003/king-slime"><strong>King Slime</strong></a>. Recolham todos os <strong>Passes</strong> que caírem e passem para o líder, que fala com Cloto para concluir a PQ. O King Slime também pode derrubar as Squishy Shoes.</p>
+<div class="kp-mobs"><a href="https://dreamms.gg/monsters/9300000/jr-necki-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300000/icon" alt="" loading="lazy">3 × Jr. Necki</a><a href="https://dreamms.gg/monsters/9300002/curse-eye-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300002/icon" alt="" loading="lazy">3 × Curse Eye</a><a href="https://dreamms.gg/monsters/9300003/king-slime"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300003/icon" alt="" loading="lazy">King Slime</a></div>
 <figure class="kp-map"><a href="https://meowdb.com/msclassic/api/assets/maps/080000400?v=11"><img src="https://meowdb.com/msclassic/api/assets/maps/080000400?v=11" alt="Mapa de referência da última sala da Kerning PQ" loading="lazy"></a></figure>
 <p>A sala bônus é opcional. A PQ já está concluída quando Cloto aceita os Passes.</p>
 </li>
