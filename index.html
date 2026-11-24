@@ -12,13 +12,14 @@ body{margin:0;background:#eff5ec;color:var(--ink);font:1rem/1.6 system-ui,sans-s
 a{color:inherit}
 a:focus-visible,summary:focus-visible{outline:3px solid #bc681e;outline-offset:4px}
 .shell{display:grid;grid-template-columns:17rem minmax(0,1fr);min-height:100vh}
-aside{background:var(--forest);color:white;padding:2rem 1.4rem}
+aside{position:sticky;top:0;align-self:start;height:100dvh;overflow:auto;background:var(--forest);color:white;padding:2rem 1.4rem}
 .brand{display:flex;align-items:center;gap:.7rem;font-weight:800;font-size:1.28rem;text-decoration:none}
 .logo{background:#fce5a8;border-radius:.65rem;padding:.26rem .52rem;color:#873727}
 nav{margin-top:2.8rem}
 nav h2{font-size:.94rem;color:#c0dac9;margin:0 0 .8rem}
 nav a{display:block;background:#315a47;border:1px solid #688775;border-radius:.55rem;padding:.65rem .85rem;text-decoration:none;font-weight:700}
-nav a:hover{background:#416e55}
+nav a:hover,nav a[aria-current="location"]{background:#416e55}
+nav a[aria-current="location"]{border-color:#b6d3bb}
 nav a+a{margin-top:.5rem}
 main{width:min(100%,68rem);margin-inline:auto;padding:clamp(1rem,4vw,3rem)}
 .hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(1.45rem,5vw,3.8rem);min-height:17rem;border:1px solid #adcdba;border-radius:1.3rem;background:linear-gradient(165deg,#deefef 5%,#eaf2cd 85%);display:flex;align-items:center}
@@ -31,6 +32,8 @@ h1{font:700 clamp(2.5rem,6vw,4.6rem)/1.05 Georgia,serif;margin:.45rem 0}
 .label{font-size:.88rem;font-weight:800;letter-spacing:.05em;color:var(--accent)}
 .guide{margin-top:1.5rem;padding:clamp(1.2rem,4vw,2rem);background:var(--paper);border:1px solid var(--line);border-radius:1rem;scroll-margin:1rem}
 .guide:target{border-color:#698f68}
+main:has(.guide:target) .guide:not(:target),
+main:not(:has(.guide:target)) .guide:not(#henesys){display:none}
 .guide h2{margin:.35rem 0 .75rem;font:700 2rem Georgia,serif}
 .guide p{color:var(--muted);margin:.5rem 0}
 .guide h3{line-height:1.25;margin:1.5rem 0 .5rem}
@@ -53,7 +56,17 @@ table{border-collapse:collapse;width:min(100%,32rem)}
 th,td{padding:.45rem .7rem;text-align:left;border-bottom:1px solid var(--line)}
 thead{background:#eef5eb}
 footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
-@media(max-width:680px){.shell{grid-template-columns:1fr}aside{padding:1rem}nav{margin-top:1rem}.hero{min-height:13rem}}
+@media(max-width:680px){
+.shell{display:block}
+aside{z-index:1;height:auto;overflow:visible;padding:.65rem 1rem}
+aside .brand{display:none}
+nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;margin:0}
+nav h2{flex-basis:100%;margin:0}
+nav a{padding:.3rem .55rem}
+nav a+a{margin-top:0}
+.hero{min-height:13rem}
+.guide{scroll-margin-top:8rem}
+}
 
 .kp-mobs{display:flex;flex-wrap:wrap;gap:.7rem;margin:.7rem 0}
 .kp-mobs a{display:flex;align-items:center;gap:.55rem;padding:.4rem .6rem;border:1px solid var(--line);border-radius:.55rem}
@@ -160,7 +173,7 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <h3>Sala 1 · Cupons da Cloto</h3>
 <p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt=""><a href="https://dreamms.gg/npcs/9020001/cloto">Cloto</a></p>
 <p>Fale com Cloto para receber uma pergunta. Derrote <a href="https://dreamms.gg/monsters/9300001/ligator-pc">Ligator</a> e fique com o <strong>número exato de cupons</strong> que responde à pergunta. Se sobrar cupom, solte o excesso antes de falar com ela.</p>
-<div class="kp-mobs"><a href="https://dreamms.gg/monsters/9300001/ligator-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300001/icon" alt="" loading="lazy">Ligator</a></div>
+<div class="kp-mobs"><a href="https://dreamms.gg/monsters/9300001/ligator-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300001/move?format=gif" alt="" loading="lazy">Ligator</a></div>
 <p>Cloto troca os cupons por um <strong><a href="https://dreamms.gg/items/4001008/pass">Pass</a></strong>. Quem receber o item deve soltá-lo para o líder. O líder recolhe os Passes e fala com Cloto para abrir a passagem.</p>
 <p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/item/4001008/icon?resize=4" alt=""><a href="https://dreamms.gg/items/4001008/pass">Pass</a></p>
 <p><strong>Perguntas de referência · lista parcial</strong></p>
@@ -273,7 +286,7 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 <li>
 <h3>Sala 5 · King Slime</h3>
 <p>Derrotem <strong>3</strong> <a href="https://dreamms.gg/monsters/9300000/jr-necki-pc">Jr. Neckis</a>, <strong>3</strong> <a href="https://dreamms.gg/monsters/9300002/curse-eye-pc">Curse Eyes</a> e o <a href="https://dreamms.gg/monsters/9300003/king-slime"><strong>King Slime</strong></a>. Recolham todos os <strong>Passes</strong> que caírem e passem para o líder, que fala com Cloto para concluir a PQ. O King Slime também pode derrubar as Squishy Shoes.</p>
-<div class="kp-mobs"><a href="https://dreamms.gg/monsters/9300000/jr-necki-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300000/icon" alt="" loading="lazy">3 × Jr. Necki</a><a href="https://dreamms.gg/monsters/9300002/curse-eye-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300002/icon" alt="" loading="lazy">3 × Curse Eye</a><a href="https://dreamms.gg/monsters/9300003/king-slime"><img src="https://api.dreamms.gg/api/gms/latest/mob/9300003/icon" alt="" loading="lazy">King Slime</a></div>
+<div class="kp-mobs"><a href="https://dreamms.gg/monsters/9300000/jr-necki-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300000/move?format=gif" alt="" loading="lazy">3 × Jr. Necki</a><a href="https://dreamms.gg/monsters/9300002/curse-eye-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300002/move?format=gif" alt="" loading="lazy">3 × Curse Eye</a><a href="https://dreamms.gg/monsters/9300003/king-slime"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300003/jump?format=gif" alt="" loading="lazy">King Slime</a></div>
 <figure class="kp-map"><a href="https://meowdb.com/msclassic/api/assets/maps/080000400?v=11"><img src="https://meowdb.com/msclassic/api/assets/maps/080000400?v=11" alt="Mapa de referência da última sala da Kerning PQ" loading="lazy"></a></figure>
 <p>A sala bônus é opcional. A PQ já está concluída quando Cloto aceita os Passes.</p>
 </li>
@@ -284,6 +297,17 @@ footer{padding:1.3rem 0;color:var(--muted);font-size:.9rem}
 </main>
 </div>
 <script>
+const guideLinks = document.querySelectorAll('nav a[href^="#"]');
+function syncGuideNavigation() {
+  const selected = document.querySelector('.guide:target')?.id ?? 'henesys';
+  for (const link of guideLinks) {
+    if (link.hash === '#' + selected) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  }
+}
+window.addEventListener('hashchange', syncGuideNavigation);
+syncGuideNavigation();
+
 for (const demo of document.querySelectorAll('.kp-demo')) {
   const positions = [...demo.dataset.positions];
   const combinations = demo.dataset.attempts.split(' ');
