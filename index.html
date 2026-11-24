@@ -71,6 +71,12 @@ nav a+a{margin-top:0}
 .kp-mobs{display:flex;flex-wrap:wrap;gap:.7rem;margin:.7rem 0}
 .kp-mobs a{display:flex;align-items:center;gap:.55rem;padding:.4rem .6rem}
 .kp-mobs img{display:block;width:auto;height:auto;max-width:5.5rem;max-height:5rem;image-rendering:pixelated}
+.kp-rooms{list-style:none;padding-inline-start:0}
+.kp-flow{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1rem 0}
+.kp-flow li{display:flex;align-items:center;gap:.5rem}
+.kp-flow li+li::before{content:"→";color:var(--muted)}
+.kp-flow a{display:grid;justify-items:center;gap:.2rem}
+.kp-flow img{display:block;width:auto;height:auto;max-width:4rem;max-height:3.5rem;image-rendering:pixelated}
 .kp-map{max-width:22rem}
 .kp-map a{display:block}
 .kp-table{margin:.6rem 0}
@@ -168,14 +174,17 @@ nav a+a{margin-top:0}
 <p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/item/1072369/icon?resize=4" alt=""><a href="https://dreamms.gg/equipment/1072369/squishy-shoes">Squishy Shoes</a> · 90% de chance no King Slime da PQ, segundo o DreamLib. Cai um par, para um jogador pegar.</p>
 <p>A bota faz parte do <strong>Party Quest Set</strong>.</p>
 </div>
-<ol class="steps">
+<ol class="steps kp-rooms">
 <li>
 <h3>Sala 1 · Cupons da Cloto</h3>
-<p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt=""><a href="https://dreamms.gg/npcs/9020001/cloto">Cloto</a></p>
-<p>Fale com Cloto para receber uma pergunta. Derrote <a href="https://dreamms.gg/monsters/9300001/ligator-pc">Ligator</a> e fique com o <strong>número exato de cupons</strong> que responde à pergunta. Se sobrar cupom, solte o excesso antes de falar com ela.</p>
-<div class="kp-mobs"><a href="https://dreamms.gg/monsters/9300001/ligator-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300001/move?format=webp" alt="" loading="lazy">Ligator</a></div>
-<p>Cloto troca os cupons por um <strong><a href="https://dreamms.gg/items/4001008/pass">Pass</a></strong>. Quem receber o item deve soltá-lo para o líder. O líder recolhe os Passes e fala com Cloto para abrir a passagem.</p>
-<p class="reward"><img src="https://api.dreamms.gg/api/gms/latest/item/4001008/icon?resize=4" alt=""><a href="https://dreamms.gg/items/4001008/pass">Pass</a></p>
+<p>Fale com Cloto para receber uma pergunta. Derrote <a href="https://dreamms.gg/monsters/9300001/ligator-pc">Ligator</a> e fique com o <strong>número exato de cupons</strong> que responde à pergunta. Se sobrar cupom, solte o excesso antes de falar com ela. Cloto troca os cupons por um <strong><a href="https://dreamms.gg/items/4001008/pass">Pass</a></strong>. Quem receber o item deve soltá-lo para o líder. O líder recolhe os Passes e fala com Cloto para abrir a passagem.</p>
+<ol class="kp-flow" aria-label="Ordem da sala 1">
+<li><a href="https://dreamms.gg/npcs/9020001/cloto"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt="" loading="lazy"><span>Cloto</span></a></li>
+<li><a href="https://dreamms.gg/monsters/9300001/ligator-pc"><img src="https://api.dreamms.gg/api/gms/latest/mob/animated/9300001/move?format=webp" alt="" loading="lazy"><span>Ligator</span></a></li>
+<li><img src="https://api.dreamms.gg/api/gms/latest/item/4001007/icon?resize=4" alt="Coupon" title="Coupon" loading="lazy"></li>
+<li><a href="https://dreamms.gg/npcs/9020001/cloto"><img src="https://api.dreamms.gg/api/gms/latest/npc/9020001/render/stand" alt="" loading="lazy"><span>Cloto</span></a></li>
+<li><a href="https://dreamms.gg/items/4001008/pass"><img src="https://api.dreamms.gg/api/gms/latest/item/4001008/icon?resize=4" alt="" loading="lazy"><span>Pass</span></a></li>
+</ol>
 <p><strong>Perguntas de referência · lista parcial</strong></p>
 <ul>
 <li>Level to become a Warrior, Magician, Bowman or Thief · <strong>10 cupons</strong></li>
